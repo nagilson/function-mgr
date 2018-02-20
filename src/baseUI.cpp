@@ -8,7 +8,6 @@ This .cpp file establishes the main framework for building
 */
 
 #include "baseUI.h"
-#define NDEBUG // The parameters sent to main are ok, and this prevents such a warning from occuring. 
 
 // The Code Below is considered standard for GUI compilation and Builds in 
 // Windows Systems. 

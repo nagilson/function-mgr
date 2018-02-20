@@ -69,7 +69,7 @@ std::string commentList[4] = {
 	"//", "/*", "*/", "#"
 };
 
-namespace mainUI {
+namespace fctMgr {
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;

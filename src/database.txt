@@ -1,0 +1,506 @@
+
+
+
+
+*^tag_pass
+*&Python
+*%
+def tag_pass(s):
+
+        brace = False
+        first = False
+        rv = ""
+
+        for i in s:
+
+            if i == '{':
+
+                if first:
+                    brace = False
+                else:
+                    brace = True
+                    first = True
+
+            elif i == "}":
+                first = False
+
+                if brace:
+                    brace = False
+
+            else:
+                first = False
+
+                if brace:
+                    pass
+                else:
+                    rv += i
+
+        return rv
+	
+*%.
+
+
+
+" || container == "*%.\n" || container == "*%. ") {
+				std::getline(fin, container);
+				if (!(container == "*%" || container == "*%.") && j < 120) {
+					codeArray[j] = std::string(container);
+					j++;
+				}
+			}
+
+			fin.close();
+			std::string compositeString = "";
+			for (int u = 0; u < 120; u++) {
+				compositeString.append(codeArray[u] + "\n");
+			}
+
+			std::ifstream finPatcher; finPatcher.open("patchErrors.txt");
+			std::string baseString; std::getline(finPatcher, baseString); // fix color highlighitng with patch .txt file data. 
+			finPatcher.close();
+
+			String ^ fileStringSystem = System::Runtime::InteropServices::Marshal::PtrToStringAnsi((IntPtr)(char *)compositeString.c_str());
+			String ^ deconstructor = System::Runtime::InteropServices::Marshal::PtrToStringAnsi((IntPtr)(char *)baseString.c_str());
+			programText->Text = deconstructor; // deconstruct text inside box
+			programText->Text = fileStringSystem;
+
+			operateHighlights();
+	}
+		else {
+			throw std::invalid_argument("database.txt File not found. Create a new file, database.txt in the same directory as the .cpp files.");
+		}
+}
+
+*%.
+*^crawlerClass
+*&Python
+*%
+class crawler:
+  # Initialize the crawler with the name of database
+  def __init__(self,dbname):
+    self.con=sqlite.connect(dbname)
+
+  def __del__(self):
+    self.con.close()
+
+  def dbcommit(self):
+    self.con.commit()
+*%.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*^boostArray
+*&C++
+*%
+namespace boost {
+  template<typename T, std::size_t N> class array;
+  template<typename T, std::size_t N> void swap(array<T, N>&, array<T, N>&);
+  template<typename T, std::size_t N> 
+    bool operator==(const array<T, N>&, const array<T, N>&);
+  template<typename T, std::size_t N> 
+    bool operator!=(const array<T, N>&, const array<T, N>&);
+  template<typename T, std::size_t N> 
+    bool operator<(const array<T, N>&, const array<T, N>&);
+  template<typename T, std::size_t N> 
+    bool operator>(const array<T, N>&, const array<T, N>&);
+  template<typename T, std::size_t N> 
+    bool operator<=(const array<T, N>&, const array<T, N>&);
+  template<typename T, std::size_t N> 
+    bool operator>=(const array<T, N>&, const array<T, N>&);
+}
+
+// This data comes from Boost: http://www.boost.org/doc/libs/1_62_0/doc/html/array/reference.html
+*%.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+" || container == "*%.\n" || container == "*%. ") {
+				std::getline(fin, container);
+				if (!(container == "*%" || container == "*%.") && j < 120) {
+					codeArray[j] = std::string(container);
+					j++;
+				}
+			}
+
+			fin.close();
+			std::string compositeString = "";
+			for (int u = 0; u < 120; u++) {
+				compositeString.append(codeArray[u] + "\n");
+			}
+
+			std::ifstream finPatcher; finPatcher.open("patchErrors.txt");
+			std::string baseString; std::getline(finPatcher, baseString); // fix color highlighitng with patch .txt file data. 
+			finPatcher.close();
+
+			String ^ fileStringSystem = System::Runtime::InteropServices::Marshal::PtrToStringAnsi((IntPtr)(char *)compositeString.c_str());
+			String ^ deconstructor = System::Runtime::InteropServices::Marshal::PtrToStringAnsi((IntPtr)(char *)baseString.c_str());
+			programText->Text = deconstructor; // deconstruct text inside box
+			programText->Text = fileStringSystem;
+
+			operateHighlights();
+	}
+		else {
+			throw std::invalid_argument("database.txt File not found. Create a new file, database.txt in the same directory as the .cpp files.");
+		}
+}
+*%.
+
+*^sendCode
+*&C++
+*%
+private: System::Void sendCode(System::Object^  sender, System::EventArgs^  e) {
+
+		/// ------------------------------------------------------------------------------------ ///
+		/*
+		//This function, which is passed down the location of the GUI object / class, and event arguments,
+			//retrieves code text from the file database.txt and sends it to a RichTextbox^ called programText.
+
+		//The function is heavily reliant on msclr marshal and the string library.
+		*/
+		/// ------------------------------------------------------------------------------------ ///
+
+		std::ifstream fin; fin.open("database.txt");
+		int selectedIndex = functionSelector->SelectedIndex; int i = 0, j = 0, line = 1; std::string fileString;
+		// In the line above, the function selected by the user is created as an int, and multiple counters are made to iterate through a file. Line is used to represent which line in the file the pointer is. 
+		std::string codeArray[120] = { "" };
+		if (fin.is_open()) {
+			do { // find the function in the filename, and iterate until the function selected in the ListBox^ matches the index of the function name in database.txt 
+				std::getline(fin, fileString);
+				line++;
+				if (fileString[0] == '*' && fileString[1] == '^') {
+					i++;
+				}
+			} while (i <= selectedIndex);
+
+			std::string container;
+			gotoLine(fin, line); // move the pointer viewing the file to the line where the code is. 
+			std::getline(fin, container);
+			while (container != "*%." || container == "*%.\n" || container == "*%. ") {
+				std::getline(fin, container);
+				if (!(container == "*%" || container == "*%.") && j < 120) {
+					codeArray[j] = std::string(container);
+					j++;
+				}
+			}
+
+			fin.close();
+			std::string compositeString = "";
+			for (int u = 0; u < 120; u++) {
+				compositeString.append(codeArray[u] + "\n");
+			}
+
+			std::ifstream finPatcher; finPatcher.open("patchErrors.txt");
+			std::string baseString; std::getline(finPatcher, baseString); // fix color highlighitng with patch .txt file data. 
+			finPatcher.close();
+
+			String ^ fileStringSystem = System::Runtime::InteropServices::Marshal::PtrToStringAnsi((IntPtr)(char *)compositeString.c_str());
+			String ^ deconstructor = System::Runtime::InteropServices::Marshal::PtrToStringAnsi((IntPtr)(char *)baseString.c_str());
+			programText->Text = deconstructor; // deconstruct text inside box
+			programText->Text = fileStringSystem;
+
+			operateHighlights();
+	}
+		else {
+			throw std::invalid_argument("database.txt File not found. Create a new file, database.txt in the same directory as the .cpp files.");
+		}
+}
+*%.
+
+
+
+
+
+
+
+
+
+
+
+*^write_dialogue
+*&Python
+*%
+     def write_dialogue(self):
+        """ Writes the dialogue to the file. """
+		# NOTE: This function comes from the renPy Assets https://www.renpy.org/
+
+        lines = []
+
+        translator = renpy.game.script.translator
+
+        for label, t in translator.file_translates[self.filename]:
+
+            if label is None:
+                label = ""
+
+            for n in t.block:
+
+                if isinstance(n, renpy.ast.Say):
+
+                    if not n.who:
+                        who = ""
+                    else:
+                        who = n.who
+
+                    what = n.what
+
+                    if self.notags:
+                        what = notags_filter(what)
+
+                    if self.escape:
+                        what = quote_unicode(what)
+
+                    if self.tdf:
+
+                        lines.append([
+                            t.identifier,
+                            who,
+                            what,
+                            n.filename,
+                            str(n.linenumber),
+                            ])
+
+                    else:
+                        lines.append([what])
+
+*%.
+
+*^setup_Turtle 
+*&Python
+*%
+ def setupTurtle():
+    """ Create and configure the file for the turtle setup """
+    window = Screen()
+    window.colormode(255)
+    window.bgcolor(randomColor())
+    window.title("Turtle Graphics UI")
+    window.setup(500, 500,startx=0, starty=0)
+    pensize(5)
+    speed(10)
+    pencolorVariable = randomColor()
+    pencolor(pencolorVariable[0], pencolorVariable[1], pencolorVariable[2],)
+
+*%.
+
+
+
+
+*^printNumbers
+*&Python
+*%
+  def printNumbers():
+	""" print zero and return pi. """
+	print("0"); 
+	return 3.14;
+*%.
+
+*^compareArrs
+*&C++
+*%
+int compareArrs(int userArr[], int compArr[]) {
+	auto matches = 0;
+	for (int i = 0; i <= 4; i++) {
+		if (userArr[i] == compArr[i]) {
+			matches++; 
+		}
+	}
+	return matches; 
+}
+*%.
+
+
+
+
+*^calculateGrade
+*&C++
+*%
+int calculateGrade() {
+	char answer;
+	std:cout << "Enter your letter grade.";
+	std::cin >> answer; 
+	switch (answer) {
+	case 'A':
+		return 90;
+		break;
+	case 'B':
+		return 80;
+		break;
+	case 'C':
+		return 70;
+		break;
+	case 'D':
+		return 60;
+		break;
+	default:
+		return 50; 
+		break;
+	}
+}
+*%.
+
+*^pythonGUI
+*&Python
+*%
+from tkinter import *
+import sys
+
+class myFirstGui(Frame):
+	def __init__(self):
+		Frame.__init__(self) # sets up window frame
+		self.master.title("My First GUI") # window title
+		self.config(bg="blue") # bg color
+		self.grid() # layout selection 
+		self.createWidgets() # call create widgets that will add elements to the screen 
+	def createWidgets(self):
+		# create a four by two grid of objects to add to the window 
+
+		""" HEADER """
+		self.headingLabel = Label(self, text = " Weekly Salary Calculator")
+		self.headingLabel.grid(row = 0, column = 0, columnspan = 2) # span 2 columns so text is centered
+		self.headingLabel.config(bg="blue", fg="white", font=("CourierNew",14)) 
+
+		"""LABELS"""
+		self.hoursLabel = Label(self, text="Hours Worked: ") # create label
+		self.hoursLabel.grid(row = 1, column = 0, sticky=W) # set the label at 1,0, sticcky = w = west = left align !! 
+		self.wageLabel = Label(self, text="Hourly Wage: ")
+		self.wageLabel.grid(row =2, column = 0, sticky=W)
+		self.totalLabel = Label(self, text="Total: ")
+		self.totalLabel.grid(row =3, column= 0, sticky=W)
+
+		""" TEXTBOXES """
+
+		self.hoursVariable = DoubleVar() # expect a decimal point 
+		self.hoursEntry = Entry(self, textvariable = self.hoursVariable)
+		self.hoursEntry.grid(row=1, column = 1, sticky=W)
+		self.wageVariable = DoubleVar()
+		self.wageEntry = Entry(self, textvariable = self.wageVariable)
+		self.wageEntry.grid(row = 2, column = 1, sticky = W)
+
+		""" OUTPUT """
+
+		self.totalVariable = DoubleVar();
+		self.totalResult= Label(self, textvariable= self.totalVariable)
+		self.totalResult.grid(row=3, column =1, sticky = W)
+
+		"""Buttons"""
+		self.calculateButton = Button(self, text="Calculate", command=self.calculateButtonAction, bg="blue", fg="white")
+		self.calculateButton.grid(row = 4, column = 0, sticky = W) 
+		self.quitButton = Button(self, text="Quit", command=self.quitButtonAction, bg="blue", fg="white")
+		self.quitButton.grid(row=4, column =1, sticky = W)
+
+		"""Functions"""
+
+	def calculateButtonAction(self):
+			""" When the event click is pressed on the button calculateButton, take this action to calculate."""
+			hours = self.hoursVariable.get()
+			wage = self.wageVariable.get()
+			total = calculateTotal(hours,wage) 
+			self.totalVariable.set("${0:.2f}".format(total))
+	def quitButtonAction(self):
+			""" When the event click is pressed on the button quitButton, take this action to quit the program."""
+			self.destroy()
+			self.quit()
+			sys.exit(0);
+
+def calculateTotal(hours, wage):
+	if hours > 40:
+		total = 40 * wage;
+		hours -= 40;
+		total += (1.5 * hours) * wage;
+	else: 
+		total = hours * wage;
+	return total;
+	# Demo Alteration Patch:
+
+
+def main():
+	gui = myFirstGui()
+	gui.mainloop()
+
+main()
+*%.
+
+*^getValidInt
+*&Python
+*%
+def getValidInt(lower, upper, prompt):
+    """ Ensures valid input from the user. """
+    controller = False # this variable  is used for catching invalid inputs.
+    while controller == False:
+        number = input(prompt)
+        try:
+            number = int(number)
+            if number >= lower and number <= upper:
+                return number;
+                controller = True 
+        except ValueError:
+            pass;
+    try:
+        if number > upper or number < lower:
+            print("Error, enter a valid number.")
+            getValidInt(lower, upper, prompt)
+    except TypeError:
+        print("Error, enter a valid number.")
+        getValidInt(lower, upper, prompt);
+*%.
+

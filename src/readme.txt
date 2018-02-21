@@ -1,10 +1,10 @@
-#Additional Instructions and Information
+# Additional Instructions and Information
 
 #If you've recreated thr project with cmake; 
 * If the program cannot compile due to the compiler not finding the Boost library, select the project and go to project -> properties and then... 
 go to C/C++ --> General -> Additional include directories and select the boost_1_63_0 folder.
 
-#Misc. Information 
+# Misc. Information 
 * The program can hold a maximum of 250 functions due to listbox restrictions. After 30,000 lines of code syntax highlighting is cancelled.
 
 * Syntax-highlighting conventions are slightly different than that of other programs. The encases of strings and comments are highlighted in color, however the string would not be.

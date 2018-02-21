@@ -290,7 +290,7 @@ namespace fctMgr {
 		// In the line above, the function selected by the user is created as an int, and multiple counters are made to iterate through a file. Line is used to represent which line in the file the pointer is. 
 		
 		
-		std::string codeArray[1450] = { "" };
+		std::string codeArray[1450] = { "" }; 
 		if (fin.is_open()) {
 			do { // find the function in the filename, and iterate until the function selected in the ListBox^ matches the index of the function name in database.txt 
 				std::getline(fin, fileString);
@@ -320,11 +320,13 @@ namespace fctMgr {
 			std::ifstream finPatcher("patchErrors.txt");
 			std::string baseString; std::getline(finPatcher, baseString); // fix color highlighitng with patch .txt file data. 
 			finPatcher.close();
-			//boost::trim_right(compositeString);
+			boost::trim_right(compositeString);
+			
 			String ^ fileStringSystem = System::Runtime::InteropServices::Marshal::PtrToStringAnsi((IntPtr)(char *)compositeString.c_str());
-			String ^ deconstructor = System::Runtime::InteropServices::Marshal::PtrToStringAnsi((IntPtr)(char *)baseString.c_str());
-			programText->Text = deconstructor; // deconstruct text inside box
+			String ^ destructor = System::Runtime::InteropServices::Marshal::PtrToStringAnsi((IntPtr)(char *)baseString.c_str());
+			programText->Text = destructor; // deconstruct text inside box
 			programText->Text = fileStringSystem;
+			
 			std::string language(grabLanguage());
 			operateHighlights(language);
 			nameBox->Text = functionSelector->GetItemText(functionSelector->SelectedItem); // update if a user tries to edit

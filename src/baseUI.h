@@ -20,20 +20,20 @@ All buttons, textboxes, etc will be stored here.
 // Go to C/C++ --> General -> Additional include directories and select the boost_1_63_0 folder. 
 #include <msclr\marshal_cppstd.h> // used to exchange std::string data and system String ^ data.
 
-std::string pythonKeywords[35] = {
+const std::string pythonKeywords[35] = {
 	"False", "class ", "finally ", " is ", "return ", "None ", "continue ", "for ", 
 	"lambda ", "try:", "True",	"def ", "from ", "nonlocal ", "while ",
 	"else ", "import ", "pass ", "break ", "except ", "in ", "raise ", "and ",
 	"del ", "global ", "not ", "with ", "as ", "elif ", "if ", " or ", "yield ", "assert ", "print(", "input("
 };
 
-std::string pythonDataTypes[16] = { 
+const std::string pythonDataTypes[16] = { 
 	"int ", "str ", "float", "complex", "list(", 
 	"tuple(", "dict(", "set(", "frozenset", "chr", "unichr", "ord", 
 	"hex", "oct", "int(", "str("
 };
 
-std::string cppKeywords[75] = {
+const std::string cppKeywords[75] = {
 	"alignas ", "alignof ", "and ", " and_eq ", "asm ", "atomic_cancel ",
 	"atomic_commit ", "atomic_noexcept ", "bitand ", " bitor ", "break", "case:", "catch",
 	"compl ", "concept ", "constexpr ", "const_cast ", "continue ", "decltype ",
@@ -47,25 +47,25 @@ std::string cppKeywords[75] = {
 	"while", "xor", " xor_eq"
 };
 
-std::string cppDataTypes[20] = {
+const std::string cppDataTypes[20] = {
 	"struct ", "int", "bool", "double", "float", "long", 
 	"void", "unsigned", "string", "char", "char16_t", "char32_t", 
 	"class ", " const", "short", "enum", "auto", "wchar_t", "std", "size_t"
 };
 
-std::string numberList[10] = {
+const std::string numberList[10] = {
 	"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"
 };
 
-std::string operatorList[20] = {
+const std::string operatorList[20] = {
 	"+", "-", "/", "*", ".", "&", "^", "%", "$", "=", "!", ">", "<", "|", "~", "?", ":",  "__init__", "\"", "\'"
 };
 
-std::string containerList[6] = {
+const std::string containerList[6] = {
 	"(", ")", "[", "]", "{", "}"
 };
 
-std::string commentList[4] = {
+const std::string commentList[4] = {
 	"//", "/*", "*/", "#"
 };
 

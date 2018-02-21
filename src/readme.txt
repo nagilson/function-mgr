@@ -1,10 +1,11 @@
+#Additional Instructions and Information
+
+#If you've recreated thr project with cmake; 
 * If the program cannot compile due to the compiler not finding the Boost library, select the project and go to project -> properties and then... 
 go to C/C++ --> General -> Additional include directories and select the boost_1_63_0 folder.
 
-* The program can hold a maximum of 250 functions due to listbox restrictions. After 30,000 lines of code syntax highlighting is cancelled to save time.
-
-* Syntax highlighting is only meant to properly update after a function has been saved and reclicked to save on performance, and because
-multi-threading without the GNU compiler wasn't successful. 
+#Misc. Information 
+* The program can hold a maximum of 250 functions due to listbox restrictions. After 30,000 lines of code syntax highlighting is cancelled.
 
 * Syntax-highlighting conventions are slightly different than that of other programs. The encases of strings and comments are highlighted in color, however the string would not be.
 Consider this string "t", " and " would be colored, however not t. To make up for this factor, datatypes such as int have their own color, instead of the std keyword colour. 

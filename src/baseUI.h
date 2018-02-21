@@ -80,15 +80,15 @@ namespace fctMgr {
 	/// <summary>
 	/// baseGUI provides all interactable services (buttons, inputs, textboxes) for the user, and establishes a design.
 	/// </summary>
-	public ref class baseGUI : public System::Windows::Forms::Form
+	public ref class baseUI : public System::Windows::Forms::Form
 	{
 	public:
-		baseGUI(void)
+		baseUI(void)
 		{
 			InitializeComponent(); // basic constructor component 
 		}
 	protected:
-		~baseGUI()
+		~baseUI()
 		{
 			if (components)
 			{
@@ -127,7 +127,7 @@ namespace fctMgr {
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
+		/// the contents of this method with the IDE as it will mess up resx files. 
 		/// </summary>
 		void InitializeComponent(void)
 		{

@@ -78,7 +78,7 @@ namespace fctMgr {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// baseGUI provides all interactable services (buttons, inputs, textboxes) for the user, and establishes a design.
+	/// baseUI provides all interactable services (buttons, inputs, textboxes) for the user, and establishes a design.
 	/// </summary>
 	public ref class baseUI : public System::Windows::Forms::Form
 	{
@@ -131,7 +131,7 @@ namespace fctMgr {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(baseGUI::typeid));
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(baseUI::typeid));
 			this->programText = (gcnew System::Windows::Forms::RichTextBox());
 			this->nameBox = (gcnew System::Windows::Forms::TextBox());
 			this->nameLabel = (gcnew System::Windows::Forms::Label());
@@ -154,7 +154,7 @@ namespace fctMgr {
 			this->programText->ForeColor = System::Drawing::SystemColors::Window;
 			resources->ApplyResources(this->programText, L"programText");
 			this->programText->Name = L"programText";
-			this->programText->TextChanged += gcnew System::EventHandler(this, &baseGUI::codeTextUpdate);
+			this->programText->TextChanged += gcnew System::EventHandler(this, &baseUI::codeTextUpdate);
 			// 
 			// nameBox
 			// 
@@ -171,7 +171,7 @@ namespace fctMgr {
 			// 
 			resources->ApplyResources(this->languageLabel, L"languageLabel");
 			this->languageLabel->Name = L"languageLabel";
-			this->languageLabel->Click += gcnew System::EventHandler(this, &baseGUI::sendCode);
+			this->languageLabel->Click += gcnew System::EventHandler(this, &baseUI::sendCode);
 			// 
 			// languageBox
 			// 
@@ -193,7 +193,7 @@ namespace fctMgr {
 			this->functionSelector->FormattingEnabled = true;
 			resources->ApplyResources(this->functionSelector, L"functionSelector");
 			this->functionSelector->Name = L"functionSelector";
-			this->functionSelector->SelectedIndexChanged += gcnew System::EventHandler(this, &baseGUI::sendCode);
+			this->functionSelector->SelectedIndexChanged += gcnew System::EventHandler(this, &baseUI::sendCode);
 			// 
 			// funtionCollectionLabel
 			// 
@@ -205,23 +205,23 @@ namespace fctMgr {
 			resources->ApplyResources(this->saveButton, L"saveButton");
 			this->saveButton->Name = L"saveButton";
 			this->saveButton->UseVisualStyleBackColor = true;
-			this->saveButton->Click += gcnew System::EventHandler(this, &baseGUI::writeToFile);
+			this->saveButton->Click += gcnew System::EventHandler(this, &baseUI::writeToFile);
 			// 
 			// copyButton
 			// 
 			resources->ApplyResources(this->copyButton, L"copyButton");
 			this->copyButton->Name = L"copyButton";
 			this->copyButton->UseVisualStyleBackColor = true;
-			this->copyButton->Click += gcnew System::EventHandler(this, &baseGUI::copyToClipboard);
+			this->copyButton->Click += gcnew System::EventHandler(this, &baseUI::copyToClipboard);
 			// 
 			// deleteButton
 			// 
 			resources->ApplyResources(this->deleteButton, L"deleteButton");
 			this->deleteButton->Name = L"deleteButton";
 			this->deleteButton->UseVisualStyleBackColor = true;
-			this->deleteButton->Click += gcnew System::EventHandler(this, &baseGUI::deleteData);
+			this->deleteButton->Click += gcnew System::EventHandler(this, &baseUI::deleteData);
 			// 
-			// baseGUI
+			// baseUI
 			// 
 			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -239,9 +239,9 @@ namespace fctMgr {
 			this->Controls->Add(this->programText);
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
-			this->Name = L"baseGUI";
+			this->Name = L"baseUI";
 			this->Opacity = 0.99;
-			this->Load += gcnew System::EventHandler(this, &baseGUI::accessFunctionNames);
+			this->Load += gcnew System::EventHandler(this, &baseUI::accessFunctionNames);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->divider))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();

@@ -263,6 +263,8 @@ namespace fctMgr {
 
 			/// ------------------------------------------------------------------------------------ ///
 			/*
+			Function is used for all delete buttons. 
+			The slightly ambiguous function name (deleteFunction and deleteData) literally refers to deleting function content and a button.)\
 			This function is activated when the delete button is pressed. It calls a function, deleteFunction
 				which deletes the function in the file. (It deletes the file and rewrites it completely.) 
 			*/

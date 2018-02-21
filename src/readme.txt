@@ -15,4 +15,4 @@ Consider this string "t", " and " would be colored, however not t. To make up fo
 
 * Instructions are only provided once on a new copy if the program does not have the ability to edit the System Regristry to check a system GUID and registry #.
 
-* This platform is for WINDOWS only. 
+* This program is for WINDOWS only. 

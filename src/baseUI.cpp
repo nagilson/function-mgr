@@ -9,9 +9,6 @@ This .cpp file establishes the main framework for building
 
 #include "baseUI.h"
 
-// The Code Below is considered standard for GUI compilation and Builds in 
-// Windows Systems. 
-
 using namespace System;
 using namespace System::Windows::Forms;
 

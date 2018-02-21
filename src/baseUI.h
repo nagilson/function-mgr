@@ -335,7 +335,8 @@ namespace fctMgr {
 
 	}
 		else {
-			;//throw std::invalid_argument("database.txt File not found. Create a new file, database.txt in the same directory as the .cpp files.");
+			;
+			// database.txt File not found. Create a new file, database.txt in the same directory as the .cpp files
 		}
 }
 
@@ -417,7 +418,7 @@ namespace fctMgr {
 			fout << "*%\n" << codeStringStandard << "\n*%." << "\n";
 		}
 		else {
-			;// throw std::invalid_argument("database.txt File not found. Create a new file, database.txt in the same directory as the .cpp files.");
+			;//database.txt File not found. Create a new file, database.txt in the same directory as the .cpp files
 		}
 		fout.close();
 		getFunctions();
@@ -447,6 +448,7 @@ namespace fctMgr {
 				 through the "database.txt" file and returns it as a string.
 				 */
 				 /// ------------------------------------------------------------------------------------ ///
+				 
 				 std::string language; int selectedIndex = functionSelector->SelectedIndex; auto i = 0, line = 1; std::string fileString;
 				 std::ifstream finFind("database.txt");
 				 if (finFind.is_open()) {
@@ -479,6 +481,7 @@ namespace fctMgr {
 			AND UAC / REGISTRY EDIT PERMISSIONS. 
 			*/
 			/// ------------------------------------------------------------------------------------ ///
+			
 			String^ registryLocation = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography";
 			String^ userIdentifier = (String^)Microsoft::Win32::Registry::GetValue(registryLocation, "MachineGuid", "0");
 			std::string userID(access.marshal_as<std::string>(userIdentifier));
@@ -491,12 +494,12 @@ namespace fctMgr {
 					std::fstream fout("userAuthToken.txt");
 					fout << userID;
 					System::Windows::Forms::MessageBox::Show("How to use the function manager:\n\n\
-To write code that you want to save into your function, type in the black IDE like box. \
-For your code to be saved, you will have to name the function and hit save.\n\
-Type in the function name in the name textbox. \
-Choose a language from the drop - down box if you would like syntax highlighting when you *next* view the code.\n\n\
-If you leave the program, your function code will not be saved unless you hit save.\n\
-Functions will appear on the left-hand side of the menu. Click or use the arrow keys to view the code of the function.\n\n ", "Instructions");
+						To write code that you want to save into your function, type in the black IDE like box. \
+						For your code to be saved, you will have to name the function and hit save.\n\
+						Type in the function name in the name textbox. \
+						Choose a language from the drop - down box if you would like syntax highlighting when you *next* view the code.\n\n\
+						If you leave the program, your function code will not be saved unless you hit save.\n\
+						Functions will appear on the left-hand side of the menu. Click or use the arrow keys to view the code of the function.\n\n ", "Instructions");
 					fout.close();
 				}
 				else {
@@ -504,7 +507,7 @@ Functions will appear on the left-hand side of the menu. Click or use the arrow 
 				}
 			}
 			else {
-				;// throw std::invalid_argument("userAuthToken.txt not found. User authentication cannot proceed until this file exists in the same directory as this .h file.");
+				;//userAuthToken.txt not found. User authentication cannot proceed until this file exists in the same directory as this .h file
 			}
 			}
 
@@ -517,7 +520,7 @@ Functions will appear on the left-hand side of the menu. Click or use the arrow 
 			/// ------------------------------------------------------------------------------------ ///
 
 			if(programText->TextLength > 30000) {
-				; // pass if there is way too much data. 
+				; // pass if there is too much to highlight
 			}
 			else {
 				if (language == "Python" || language == "C++") {
@@ -558,6 +561,14 @@ Functions will appear on the left-hand side of the menu. Click or use the arrow 
 	}
 		void deleteFunction(String^ functionToDestroySystemVers) {
 
+			/// ------------------------------------------------------------------------------------ ///
+			/*
+			Given the system string that contains the name of a function we want to destroy, 
+			delete that function from the database. 
+			*/
+			/// ------------------------------------------------------------------------------------ ///
+	
+				
 			std::ifstream fin("database.txt");
 			std::string code(""); std::string container("");
 			if (fin.is_open()) {
@@ -581,7 +592,7 @@ Functions will appear on the left-hand side of the menu. Click or use the arrow 
 			std::ofstream outputFile;
 			
 			if (remove("database.txt") != 0){
-				;// throw std::invalid_argument("database.txt not found.");
+				;//database.txt not found
 			}
 			else {
 				outputFile.open("database.txt");
@@ -619,7 +630,7 @@ Functions will appear on the left-hand side of the menu. Click or use the arrow 
 				}
 			}
 			else {
-				;// throw std::invalid_argument("database.txt File not found. Create a new file, database.txt in the same directory as the .cpp files.");
+				;//database.txt File not found. Create a new file, database.txt in the same directory as the .cpp files
 			}
 			for (auto i = 0; i < 250; ++i) { // for all possible elements in the array of function names 
 				if (!(functionNames[i] == "")) { 

@@ -1,19 +1,9 @@
 # Additional Instructions and Information
 
-#If you've recreated thr project with cmake; 
+#If you've recreated the project with cmake; 
 * If the program cannot compile due to the compiler not finding the Boost library, select the project and go to project -> properties and then... 
-go to C/C++ --> General -> Additional include directories and select the boost_1_63_0 folder.
-
-# Misc. Information 
-* The program can hold a maximum of 250 functions due to listbox restrictions. After 30,000 lines of code syntax highlighting is cancelled.
-
-* Syntax-highlighting conventions are slightly different than that of other programs. The encases of strings and comments are highlighted in color, however the string would not be.
-Consider this string "t", " and " would be colored, however not t. To make up for this factor, datatypes such as int have their own color, instead of the std keyword colour. 
+go to C/C++ --> General -> Additional include directories and select a boost folder.
 
 * Two functions found on stackoverflow have helped the development of this project by inspiration (not necessarily verbatim copy) and have been referenced at the proper function header.
 
 * If you edit the database.txt file yourself, be weary of the conventions of how data is stored using *`s in combo with other names. 
-
-* Instructions are only provided once on a new copy if the program does not have the ability to edit the System Regristry to check a system GUID and registry #.
-
-* This program is for WINDOWS only. 

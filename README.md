@@ -1,6 +1,8 @@
-# function-mgr 
-Elementary code snippet manager that's created using Visual C++ (VS CLI Project.) 
-Resx files and all other project files are not included. This project requires a complete rebuild from cmake (and possibly with use of ReSharpen) if you would like to edit. I am working on adding the cmake file soon.
+## function-mgr: Stop Reusing Code
 
-# How to use
-The release folder in src provides an executable that should be easy to work with and run on a windows machine. 
+This is a basic code snippet manager created using C++ and Windows Forms. 
+The original project type is now deprecated in Visual Studio, so the project is discontinued and you will not be able to build it or edit it any further, unfortunately. 
+
+# Usage
+
+You cannot compile this program, and you must instead use the .exe file provided in the release folder.

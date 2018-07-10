@@ -1,5 +1,4 @@
 /*
-Viru
 baseUI.h
 This class, baseUI, includes most GUI related content for the program, besides information dumped
 	into text files and compile / build run time execution data. 

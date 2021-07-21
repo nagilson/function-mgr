@@ -1,4 +1,4 @@
-# function-mgr: Stop Reusing Code
+# function-mgr: Stop Rewriting the Same Code
 
 This project was a code snippet manager created using C++ using VS GUI tools. 
 Features:
